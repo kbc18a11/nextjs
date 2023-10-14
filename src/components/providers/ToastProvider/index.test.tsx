@@ -8,7 +8,7 @@ import { ToastState } from "./ToastContext";
 
 const user = userEvent.setup();
 
-const TestComponent = ({ message }: { message: string }) => {
+const MockComponent = ({ message }: { message: string }) => {
   const { showToast } = useToastAction(); // <Toast> を表示するためのフック
   return <button onClick={() => showToast({ message })}>show</button>;
 };
@@ -17,7 +17,7 @@ test("showToast を呼び出すと Toast コンポーネントが表示される
   const message = "test";
   render(
     <ToastProvider>
-      <TestComponent message={message} />
+      <MockComponent message={message} />
     </ToastProvider>
   );
   // 初めは表示されていない
