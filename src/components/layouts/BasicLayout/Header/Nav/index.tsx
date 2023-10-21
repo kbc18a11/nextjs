@@ -22,12 +22,7 @@ export const Nav = ({ onCloseMenu }: Props) => {
       <ul className={styles.list}>
         <li>
           <Link href={`/my/posts`} legacyBehavior>
-            <a
-              {...isCurrent(
-                pathname.startsWith("/my/posts") &&
-                  pathname !== "/my/posts/create"
-              )}
-            >
+            <a {...isCurrent(pathname.startsWith("/my/posts") && pathname !== "/my/posts/create")}>
               My Posts
             </a>
           </Link>
